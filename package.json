@@ -1,21 +1,25 @@
 {
-  "name": "goit-node-hw-01",
+  "name": "goit-node.js-hw-01",
   "version": "1.0.0",
-  "HomePageView": "https://alexeyzyukov.github.io/goit-node-hw-01/",
+  "HomePageView": "https://alexeyzyukov.github.io/goit-node.js-hw-01/",
   "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "start:dev": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "commander": "^9.0.0"
+    "commander": "^9.0.0",
+    "crypto": "^1.0.1",
+    "nodemon": "^2.0.15"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alexeyzyukov/goit-node-hw-01.git"
+    "url": "git+https://github.com/alexeyzyukov/goit-node.js-hw-01.git"
   }
 }
