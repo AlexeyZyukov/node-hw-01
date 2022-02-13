@@ -4,7 +4,7 @@
   "HomePageView": "https://alexeyzyukov.github.io/goit-node.js-hw-01/",
   "description": "",
   "main": "index.js",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
@@ -15,7 +15,6 @@
   "license": "ISC",
   "devDependencies": {
     "commander": "^9.0.0",
-    "crypto": "^1.0.1",
     "nodemon": "^2.0.15"
   },
   "repository": {
