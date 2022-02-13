@@ -1,14 +1,13 @@
 const fs = require('fs/promises');
-const pathToContacts = require('path');
+const path = require('path');
 const { randomUUID } = require('crypto-random-string');
 const contactsDB = require('./db/contact.json');
 
 const readContent = async () => {
     const content = await fs.readFile(
-        pathToContacts.join(__dirname, 'contact.json'), utf8,
+        path.join(__dirname, 'contact.json'), 'utf8',
     )
     const result = JSON.parse(content)
-    console.log(result);
     return result;
 }
 
@@ -25,13 +24,20 @@ async function getContactById(contactId) {
 async function removeContact(contactId) {
     const contacts = await readContent()
     contacts = contacts.filter((c) => c.id !== contactId)
+    await fs.writeFile(
+        path.join(__dirname, 'contact.json'),
+        JSON.stringify(contacts, null, 0)
+    )
     return contacts;
 }
 
 async function addContact(name, email, phone) {
     const contacts = await readContent()
     const newContact = { id: randomUUID, name, email, phone }
-
+    contacts.push(newContact)
+    await fs.writeFile(__dirname, 'contacts.json'),
+        JSON.stringify(contacts, null, 2)
+    return contacts
 }
 
-module.exports = { listContacts, getContactById };
+module.exports = { listContacts, getContactById, addContact, removeContact };
