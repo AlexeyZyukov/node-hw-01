@@ -24,6 +24,7 @@ yarn-error.log*
 
 # folders
 *hide
+*node_modules
 
 # files
 *hide.*
