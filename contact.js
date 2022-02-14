@@ -1,7 +1,6 @@
 const fs = require('fs/promises');
 const path = require('path');
 const { randomUUID } = require('crypto');
-// const contactsDB = require('./db/contact.json');
 
 const contactsDB = 'db/contact.json';
 
@@ -9,7 +8,7 @@ const readContent = async () => {
     const content = await fs.readFile(
         path.join(__dirname, contactsDB),
         'utf8',
-    ) // string
+    )
     const result = JSON.parse(content)
     return result
 }
